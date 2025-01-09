@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Specifies the document type and declares it as HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding of the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures proper rendering and touch zooming on mobile devices -->
+    <title>FD Calculator</title>
+    <!-- Defines the title of the webpage displayed in the browser tab -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Links an external CSS file to style the webpage -->
+</head>
+<body>
+    <!-- Main content of the webpage starts here -->
+
+    <div class="calculator">
+        <!-- Container for the entire FD Calculator UI -->
+        <h1>FD Calculator</h1>
+        <!-- Heading for the FD Calculator -->
+
+        <!-- Input section for investment amount -->
+        <div class="input-section">
+            <label for="investment">Total Investment</label>
+            <!-- Label for the investment slider -->
+            <input type="range" id="investment" min="10000" max="1000000" step="10000" value="100000">
+            <!-- Range slider to select investment amount, with minimum, maximum, and step values defined -->
+            <span id="investment-value">₹100,000</span>
+            <!-- Display the selected investment value -->
+        </div>
+
+        <!-- Input section for rate of interest -->
+        <div class="input-section">
+            <label for="interest-rate">Rate of interest(p.a)</label>
+            <!-- Label for the interest rate slider -->
+            <input type="range" id="interest-rate" min="1" max="15" step="0.1" value="6.5">
+            <!-- Range slider to select interest rate, with minimum, maximum, and step values defined -->
+            <span id="interest-rate-value">6.5%</span>
+            <!-- Display the selected interest rate -->
+        </div>
+
+        <!-- Input section for time period -->
+        <div class="input-section">
+            <label for="time-period">Time period (Years)</label>
+            <!-- Label for the time period slider -->
+            <input type="range" id="time-period" min="1" max="20" step="1" value="5">
+            <!-- Range slider to select time period, with minimum, maximum, and step values defined -->
+            <span id="time-period-value">5</span>
+            <!-- Display the selected time period -->
+        </div>
+
+        <button onclick="calculateFD()">INVEST NOW</button>
+        <!-- Button to trigger the FD calculation when clicked -->
+
+        <!-- Output section to display results -->
+        <div class="output-section">
+            <p>Invested amount:<span id="invested-amount">-</span></p>
+            <!-- Paragraph to display the total invested amount -->
+            <p>Est. returns:<span id="estimated-returns">-</span></p>
+            <!-- Paragraph to display the estimated returns -->
+            <p>Total value:<span id="total-value">-</span></p>
+            <!-- Paragraph to display the total value (investment + returns) -->
+        </div>
+
+    </div>
+
+    <!-- Links the external JavaScript file to handle interactivity and calculations -->
+    <script src="script.js"></script>
+</body>
+</html>

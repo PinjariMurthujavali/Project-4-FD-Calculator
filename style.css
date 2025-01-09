@@ -1,0 +1,150 @@
+/* General body styling */
+body {
+    font-family: sans-serif; /* Sets a clean, sans-serif font for the page */
+    background-color: honeydew; /* Fallback background color in case gradient fails */
+    background: linear-gradient(#87CEEB, #ffffff); /* Creates a light blue to white gradient background */
+    display: flex; /* Enables flexbox for body content alignment */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    height: 100vh; /* Sets the height to full viewport height */
+    margin: 0; /* Removes default body margin */
+}
+
+/* Styling the main calculator container */
+.calculator {
+    background: linear-gradient(120deg, #f56456, #f5576c); /* Gradient background for the calculator box */
+    border: 1px solid #ddd; /* Adds a light border around the box */
+    border-radius: 8px; /* Rounds the corners */
+    padding: 20px; /* Adds padding inside the box */
+    width: 520px; /* Sets a fixed width for the calculator */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Creates a subtle shadow for a 3D effect */
+    position: relative; /* Enables positioning for pseudo-elements */
+    overflow: hidden; /* Ensures content doesn’t overflow the box */
+    animation: fadeIn 1s ease-in-out; /* Fades the box in on page load */
+}
+
+/* Adding a rotating gradient animation effect to the calculator background */
+.calculator::before {
+    content: ''; /* Creates a pseudo-element for decorative purposes */
+    position: absolute; /* Positions it relative to the calculator */
+    top: -50%; /* Ensures it covers more than the container */
+    left: -50%; /* Ensures it covers more than the container */
+    width: 200%; /* Makes it twice as wide as the container */
+    height: 200%; /* Makes it twice as tall as the container */
+    background: linear-gradient(120deg, #f093fb, #f56456); /* Gradient for the animation */
+    z-index: -1; /* Places it behind the calculator content */
+    animation: rotate 10s linear infinite; /* Rotates the background infinitely */
+}
+
+/* Keyframe animation for fading in the calculator */
+@keyframes fadeIn {
+    from { opacity: 0; } /* Starts fully transparent */
+    to { opacity: 1; } /* Ends fully visible */
+}
+
+/* Keyframe animation for rotating the background */
+@keyframes rotate {
+    from { transform: rotate(0deg); } /* Starts with no rotation */
+    to { transform: rotate(360deg); } /* Completes a full rotation */
+}
+
+/* Calculator heading styling */
+.calculator h1 {
+    font-size: 34px; /* Larger font size for emphasis */
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-align: center; /* Centers the heading text */
+    color: white; /* Makes the text white for contrast */
+}
+
+/* Input section styling */
+.input-section {
+    margin-bottom: 25px; /* Adds spacing between input sections */
+    position: relative; /* Allows for positioning child elements */
+    z-index: 1; /* Ensures content is above the background animation */
+}
+
+/* Labels for sliders */
+.input-section label {
+    display: block; /* Ensures labels occupy full width */
+    font-size: 24px; /* Increases font size for readability */
+    margin-bottom: 5px; /* Adds space below the label */
+    color: white; /* White text for contrast */
+}
+
+/* Slider input styling */
+.input-section input[type="range"] {
+    width: 100%; /* Makes the slider span the full width */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+}
+
+/* Display span for slider values */
+.input-section span {
+    display: block; /* Ensures each value occupies its own line */
+    color: white; /* White text for contrast */
+    font-size: 20px; /* Makes the text easier to read */
+    margin-top: 5px; /* Adds space above the span */
+}
+
+/* Button styling */
+button {
+    width: 100%; /* Makes the button span the full width of the container */
+    padding: 10px; /* Adds padding inside the button */
+    background-color: #28a745; /* Sets a green background */
+    color: white; /* White text for contrast */
+    border: none; /* Removes the default border */
+    border-radius: 6px; /* Rounds the button corners */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    font-size: 16px; /* Sets an easy-to-read font size */
+    z-index: 1; /* Ensures the button is above the animated background */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #218838; /* Changes the background to a darker green on hover */
+}
+
+/* Output section styling */
+.output-section {
+    margin-top: 20px; /* Adds spacing above the output section */
+    text-align: center; /* Centers the text inside */
+    position: relative; /* Enables layering for child elements */
+    z-index: 1; /* Ensures the section is above the background animation */
+}
+
+/* Paragraph styling inside the output section */
+.output-section p {
+    margin: 5px 0; /* Adds vertical spacing between paragraphs */
+    afont-size: 18px; /* Sets a readable font size */
+    color: white; /* White text for contrst */
+}
+
+/* Bold styling for highlighted values */
+.output-section span {
+    font-weight: bold; /* Makes the text bold for emphasis */
+}
+
+/* General styling for all range sliders */
+input[type="range"] {
+    appearance: none; /* Removes default styling */
+    width: 100%; /* Makes the slider span the full width */
+    height: 8px; /* Sets a consistent slider height */
+    background: #ddd; /* Sets a light gray background */
+    outline: none; /* Removes the outline for a cleaner look */
+    opacity: 0.9; /* Slightly reduces the opacity for a soft look */
+    transition: 0.2s; /* Adds a smooth transition effect */
+}
+
+/* Ensures full opacity for the slider on interaction */
+input[type="range"]:active {
+    opacity: 1; /* Restores full opacity */
+}
+
+/* Styling for the slider thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none; /* Removes default thumb styling */
+    width: 20px; /* Sets a consistent thumb width */
+    height: 20px; /* Sets a consistent thumb height */
+    background-color: #28a745; /* Matches the button color */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    border-radius: 50%; /* Makes the thumb circular */
+}
